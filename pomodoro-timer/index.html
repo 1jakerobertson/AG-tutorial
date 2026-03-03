@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <!-- Modern typography from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Glassmorphism panel -->
+        <div class="glass-panel">
+            <h1>Focus</h1>
+
+            <div class="time-input-container">
+                <input type="number" id="time-input" value="25" min="1" max="120" class="time-input" />
+                <span class="time-input-label">min</span>
+            </div>
+
+            <div class="timer-display" id="time-display">25:00</div>
+
+            <div class="controls">
+                <button id="start-btn" class="btn primary-btn">Start</button>
+                <button id="reset-btn" class="btn secondary-btn">Reset</button>
+            </div>
+
+            <!-- Circular progress ring -->
+            <div class="progress-ring-container">
+                <svg class="progress-ring" width="300" height="300">
+                    <!-- Background ring -->
+                    <circle class="progress-ring__circle_bg" stroke="rgba(255,255,255,0.05)" stroke-width="8"
+                        fill="transparent" r="140" cx="150" cy="150" />
+                    <!-- Foreground progress ring -->
+                    <circle class="progress-ring__circle" id="progress-circle" stroke="url(#gradient)" stroke-width="8"
+                        fill="transparent" r="140" cx="150" cy="150" />
+
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#ff7eb3" />
+                            <stop offset="100%" stop-color="#ff758c" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
